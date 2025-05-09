@@ -1,0 +1,110 @@
+{% extends "Layout.html" %}
+{% block title %}HealthCare - Results{% endblock %}
+
+{% block style %}
+<style>
+  .result-container {
+    border-radius: 15px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  
+  .positive-result {
+    background-color: #f8f9fa;
+    border-left-color: #dc3545;
+  }
+  
+  .negative-result {
+    background-color: #f8f9fa;
+    border-left-color: #198754;
+  }
+  
+  .result-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+  
+  .more-info-link {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .more-info-link:hover {
+    transform: translateX(5px);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .result-icon {
+      width: 80px;
+      height: 80px;
+      margin-top: 20px;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- Main Body -->
+<div class="container my-5">
+  <div class="result-container p-4 p-lg-5 {% if 'positive' in prediction_text.lower() %}positive-result{% else %}negative-result{% endif %}">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <h1 class="display-5 fw-bold mb-3">
+          {% if 'positive' in prediction_text.lower() %}
+            <i class="fas fa-exclamation-triangle text-danger me-2"></i>
+          {% else %}
+            <i class="fas fa-check-circle text-success me-2"></i>
+          {% endif %}
+          {{ prediction_text }}
+        </h1>
+        
+        <p class="lead mb-4">
+          {% if 'positive' in prediction_text.lower() %}
+            Our analysis suggests you may be at risk. Please consult with a healthcare professional for further evaluation.
+          {% else %}
+            Our analysis suggests low risk. Maintain healthy habits and regular check-ups.
+          {% endif %}
+        </p>
+        
+        <div class="d-flex align-items-center">
+          <a href="/about" class="more-info-link {% if 'positive' in prediction_text.lower() %}text-danger{% else %}text-success{% endif %}">
+            Learn more about this condition
+            <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-md-4 text-center">
+        <img src="/static/doctor_Iamge1.jpg" class="result-icon img-fluid" 
+             alt="Medical professional reviewing results">
+      </div>
+    </div>
+  </div>
+  
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h3 class="h5 card-title">Next Steps</h3>
+          <ul class="list-group list-group-flush">
+            {% if 'positive' in prediction_text.lower() %}
+              <li class="list-group-item border-0"><i class="fas fa-calendar-check text-primary me-2"></i> Schedule an appointment with your doctor</li>
+              <li class="list-group-item border-0"><i class="fas fa-file-medical text-primary me-2"></i> Prepare your medical history for review</li>
+              <li class="list-group-item border-0"><i class="fas fa-heartbeat text-primary me-2"></i> Monitor any symptoms you may be experiencing</li>
+            {% else %}
+              <li class="list-group-item border-0"><i class="fas fa-utensils text-primary me-2"></i> Maintain a balanced diet</li>
+              <li class="list-group-item border-0"><i class="fas fa-running text-primary me-2"></i> Continue regular physical activity</li>
+              <li class="list-group-item border-0"><i class="fas fa-calendar-alt text-primary me-2"></i> Schedule annual check-ups</li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

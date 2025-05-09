@@ -1,0 +1,225 @@
+{% extends "Layout.html" %}
+{% block title %}HealthCare - Stay Healthy{% endblock %}
+
+{% block style %}
+<style>
+  .hero-carousel {
+    height: 70vh;
+    min-height: 500px;
+    position: relative;
+  }
+  
+  .hero-carousel img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    bottom: 3rem;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+  
+  .feature-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid #f8f9fa;
+  }
+  
+  .problem-section {
+    padding: 4rem 0;
+  }
+  
+  .problem-section:nth-child(odd) {
+    background-color: #f8f9fa;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-carousel {
+      height: 50vh;
+      min-height: 400px;
+    }
+    
+    .carousel-caption {
+      padding: 1rem;
+      bottom: 1rem;
+    }
+    
+    .carousel-caption h5 {
+      font-size: 1.25rem;
+    }
+    
+    .carousel-caption p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- Hero Carousel -->
+<section class="hero-carousel">
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <img src="/static/bg-1.jpg" class="d-block w-100" alt="AI doctor analyzing medical data">
+        <div class="carousel-caption text-start">
+          <h5>Experience the Power of AI in Healthcare</h5>
+          <p class="lead">Our AI solutions reduce doctor workload while maintaining diagnostic accuracy, allowing healthcare professionals to focus on patient care.</p>
+          <a href="#features" class="btn btn-primary btn-lg mt-2">Explore Features</a>
+        </div>
+      </div>
+      
+      <div class="carousel-item h-100">
+        <img src="/static/bg-2.jpg" class="d-block w-100" alt="Doctor using digital tablet with patient">
+        <div class="carousel-caption">
+          <h5>Bridging the Healthcare Gap</h5>
+          <p class="lead">Bringing quality healthcare to underserved areas through accessible AI-powered diagnostics.</p>
+          <a href="#problems" class="btn btn-primary btn-lg mt-2">Learn About Challenges</a>
+        </div>
+      </div>
+      
+      <div class="carousel-item h-100">
+        <img src="/static/bg-3.jpg" class="d-block w-100" alt="Futuristic healthcare technology interface">
+        <div class="carousel-caption text-end">
+          <h5>AI: The Future of Healthcare</h5>
+          <p class="lead">Transforming medical diagnostics with cutting-edge machine learning technology.</p>
+          <a href="/about" class="btn btn-primary btn-lg mt-2">About Our Technology</a>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="container py-5">
+  <div class="row text-center mb-5">
+    <div class="col">
+      <h2 class="display-5">Why Choose Our Healthcare Solutions</h2>
+      <p class="lead text-muted">Advanced technology designed for real-world healthcare challenges</p>
+    </div>
+  </div>
+  
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="card feature-card p-4">
+        <div class="card-body text-center">
+          <img class="rounded-circle feature-icon mb-3" src="/static/clock1.jpg" alt="Fast prediction clock icon">
+          <h3 class="h4">Rapid Diagnostics</h3>
+          <p>Our optimized ML models deliver accurate predictions in seconds, reducing wait times without compromising reliability.</p>
+          <a href="/diabetes" class="btn btn-outline-primary">Try Diabetes Assessment</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card feature-card p-4">
+        <div class="card-body text-center">
+          <img class="rounded-circle feature-icon mb-3" src="/static/accuracy.jpg" alt="High accuracy gauge icon">
+          <h3 class="h4">Clinical Accuracy</h3>
+          <p>Precision-tuned algorithms with carefully selected hyperparameters ensure medically reliable results.</p>
+          <a href="/kidney" class="btn btn-outline-primary">Try Kidney Assessment</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card feature-card p-4">
+        <div class="card-body text-center">
+          <img class="rounded-circle feature-icon mb-3" src="/static/rangeImg.webp" alt="Wide range checklist icon">
+          <h3 class="h4">Comprehensive Coverage</h3>
+          <p>From diabetes to kidney disease, our platform addresses multiple critical health conditions.</p>
+          <a href="/about" class="btn btn-outline-primary">Learn About Diseases</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Healthcare Challenges Sections -->
+<section id="problems" class="problem-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h2 class="display-6">Doctor Shortage Crisis</h2>
+        <p class="lead text-muted">India faces a critical shortage of medical professionals</p>
+        <p>WHO reports reveal only 0.76 doctors and 2.09 nurses per 1000 people, far below recommended levels. Compounding this is a severe lack of hospital infrastructure with just 1.3 beds per 1000 population. Our AI solutions help bridge this gap by providing preliminary diagnostics that extend healthcare reach.</p>
+        <a href="/about" class="btn btn-primary mt-3">How We Help</a>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid rounded shadow" src="/static/healthCarepro1.jpg" alt="Overworked doctor in crowded hospital">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 order-md-1 order-2">
+        <img class="img-fluid rounded shadow" src="/static/healthCarepro2.jpg" alt="Remote village healthcare access">
+      </div>
+      <div class="col-md-7 order-md-2 order-1">
+        <h2 class="display-6">Geographic Accessibility</h2>
+        <p class="lead text-muted">Urban-rural healthcare disparities</p>
+        <p>Physical access to hospitals remains a major barrier, particularly in rural areas where 70% of India's population lives. Our web-based platform enables remote communities to access quality healthcare diagnostics without traveling long distances to urban centers.</p>
+        <a href="/contact" class="btn btn-primary mt-3">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h2 class="display-6">Affordability Challenge</h2>
+        <p class="lead text-muted">Healthcare costs pushing millions into poverty</p>
+        <p>Government estimates show approximately 63 million Indians face poverty annually due to healthcare expenses. Our affordable AI solutions provide cost-effective preliminary diagnostics, helping families avoid financial catastrophe while maintaining health standards.</p>
+        <a href="/servic" class="btn btn-primary mt-3">Our Services</a>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid rounded shadow" src="/static/healthCarepro3.jpg" alt="Family struggling with medical bills">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

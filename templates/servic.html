@@ -1,0 +1,102 @@
+{% extends "Layout.html" %}
+{% block title %}HealthCare - Our Services{% endblock %}
+{% block body %}
+<div class="container">
+    <header class="my-5 text-center">
+        <h1 class="display-4">Smart. Affordable. Accessible.</h1>
+        <p class="lead text-muted">Explore how our AI-driven healthcare platform transforms access to diagnostics and prevention — without breaking the bank.</p>
+    </header>
+
+    <section class="mb-5">
+        <h2 class="mb-4">Why Affordability Matters</h2>
+        <p>Each year, <strong>63 million Indians</strong> are pushed into poverty due to high healthcare costs — often from diagnostic delays and preventable hospital visits.</p>
+        <p>Our mission is to <strong>reduce financial burden</strong> by providing digital tools for early detection and risk assessment, empowering individuals and families before medical issues escalate.</p>
+        <figure class="text-center my-4">
+            <img src="/static/affordability_chart.jpg" class="img-fluid rounded" width="600" alt="Healthcare affordability stats in India">
+            <figcaption class="mt-2 text-muted">Rising out-of-pocket healthcare expenses across Indian households</figcaption>
+        </figure>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-4">Our Core Services</h2>
+        <div class="row text-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <i class="bi bi-cpu-fill display-4 text-primary mb-3"></i>
+                        <h5 class="card-title">AI Disease Prediction</h5>
+                        <p class="card-text">Predict conditions like <strong>diabetes</strong> and <strong>chronic kidney disease</strong> using symptom-based machine learning models.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <i class="bi bi-globe2 display-4 text-success mb-3"></i>
+                        <h5 class="card-title">Web-Based Accessibility</h5>
+                        <p class="card-text">Use our platform anytime, anywhere — from mobile phones, health kiosks, or community centers — no hospital visit needed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <i class="bi bi-cash-coin display-4 text-warning mb-3"></i>
+                        <h5 class="card-title">Cost-Effective Screening</h5>
+                        <p class="card-text">Save thousands by detecting early signs of illness and avoiding costly emergency treatments or specialist consultations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <i class="bi bi-translate display-4 text-danger mb-3"></i>
+                        <h5 class="card-title">Multi-Language Support</h5>
+                        <p class="card-text">Our tools support regional languages to reach users with low digital literacy and ensure they fully understand their health insights.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <i class="bi bi-person-check-fill display-4 text-info mb-3"></i>
+                        <h5 class="card-title">Personalized Health Reports</h5>
+                        <p class="card-text">Get a downloadable, easy-to-read summary of your health risk profile, with recommended next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center my-5">
+        <h2 class="mb-4">Ready to Take Control of Your Health?</h2>
+        <p class="lead">Get a free, AI-powered risk assessment — safe, secure, and private.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-lg btn-primary px-5 py-3">Start Your Health Check</a>
+    </section>
+
+    <footer class="mt-5 pt-4 border-top text-muted">
+        <p>This service offers AI-based risk assessment and health education. It does not replace licensed medical professionals. Consult your doctor for clinical decisions.</p>
+    </footer>
+</div>
+
+<style>
+    h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+    .card-title {
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    .card-body {
+        padding: 1.5rem;
+    }
+    i.bi {
+        font-size: 2.5rem;
+    }
+</style>
+
+<!-- Make sure to include Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}

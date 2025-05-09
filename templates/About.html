@@ -1,0 +1,126 @@
+{% extends "Layout.html" %}
+{% block title %}HealthCare - About{% endblock %}
+{% block body %}
+<div class="container">
+    <header class="my-5">
+        <h1 class="display-4">HealthCare: Machine Learning Medical App</h1>
+        <p class="lead">Our application uses advanced machine learning models trained on thousands of medical datasets to predict potential health conditions.</p>
+    </header>
+
+    <section class="mb-5">
+        <h2 class="mb-4">About Our Disease Prediction System</h2>
+        <p>The following sections describe the types of diseases our app can help predict, along with important information about each condition.</p>
+    </section>
+
+    <div class="disease-list">
+        <!-- Kidney Disease Section -->
+        <article class="disease-section mb-5 p-4 border rounded">
+            <h2 class="mb-4">Kidney Disease</h2>
+            <figure class="text-center mb-4">
+                <img src="/static/kidney_images.jpg" class="img-fluid rounded" width="500" alt="Diagram of human kidneys showing their location in the body">
+                <figcaption class="mt-2 text-muted">Location and structure of human kidneys</figcaption>
+            </figure>
+
+            <section class="mb-4">
+                <h3 class="h4">Overview</h3>
+                <p>The kidneys play vital roles in body function by:</p>
+                <ul>
+                    <li>Filtering blood and removing waste products</li>
+                    <li>Balancing electrolyte levels in the body</li>
+                    <li>Controlling blood pressure</li>
+                    <li>Stimulating red blood cell production</li>
+                </ul>
+                <p>The kidneys are located in the abdomen toward the back, normally one on each side of the spine. They receive blood through the renal arteries and return blood via the renal veins to the vena cava.</p>
+            </section>
+
+            <section class="mb-4">
+                <h3 class="h4">What is Chronic Kidney Disease?</h3>
+                <p>Chronic kidney disease (CKD) means your kidneys are damaged and can't filter blood properly. The disease is called "chronic" because the damage happens gradually over a long period, causing wastes to build up in your body and potentially leading to other health problems.</p>
+            </section>
+
+            <section>
+                <h3 class="h4">Symptoms of Advanced CKD</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Chest pain</li>
+                            <li class="list-group-item">Dry skin</li>
+                            <li class="list-group-item">Shortness of breath</li>
+                            <li class="list-group-item">Itching or numbness</li>
+                            <li class="list-group-item">Sleep problems</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Headaches</li>
+                            <li class="list-group-item">Changes in urination</li>
+                            <li class="list-group-item">Trouble concentrating</li>
+                            <li class="list-group-item">Muscle cramps</li>
+                            <li class="list-group-item">Unexplained weight loss</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- Diabetes Section -->
+        <article class="disease-section mb-5 p-4 border rounded">
+            <h2 class="mb-4">Diabetes</h2>
+            <figure class="text-center mb-4">
+                <img src="/static/Diabetes_image.jpg" class="img-fluid rounded" width="500" alt="Illustration showing blood sugar regulation in diabetes">
+                <figcaption class="mt-2 text-muted">Blood sugar regulation in diabetes</figcaption>
+            </figure>
+
+            <section class="mb-4">
+                <h3 class="h4">Overview</h3>
+                <p>Diabetes is a chronic condition that occurs when blood glucose (blood sugar) levels become too high. This happens when:</p>
+                <ul>
+                    <li>The body doesn't produce enough insulin (Type 1 Diabetes)</li>
+                    <li>The body can't effectively use the insulin it produces (Type 2 Diabetes)</li>
+                </ul>
+                <p>Over time, uncontrolled high blood glucose can lead to serious health complications. While diabetes has no cure, proper management can help maintain health and prevent complications.</p>
+            </section>
+
+            <section>
+                <h3 class="h4">Potential Complications</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Increased risk of stroke</li>
+                            <li class="list-group-item">Kidney disease (nephropathy)</li>
+                            <li class="list-group-item">Eye problems (retinopathy)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Dental disease</li>
+                            <li class="list-group-item">Nerve damage (neuropathy)</li>
+                            <li class="list-group-item">Foot problems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <footer class="mt-5 pt-4 border-top">
+        <p class="text-muted">Note: These predictions are based on statistical models and should not replace professional medical advice. Always consult with a healthcare provider for medical concerns.</p>
+    </footer>
+</div>
+
+<style>
+    .disease-section {
+        background-color: #f8f9fa;
+    }
+    .disease-section h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+    .list-group-item {
+        background-color: transparent;
+        border-left: none;
+        border-right: none;
+    }
+</style>
+{% endblock %}

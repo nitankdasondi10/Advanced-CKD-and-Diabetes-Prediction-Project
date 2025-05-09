@@ -1,0 +1,58 @@
+{% extends "Layout.html" %}
+{% block title %}HealthCare - Geographic Accessibility{% endblock %}
+{% block body %}
+<div class="container">
+    <header class="my-5">
+        <h1 class="display-4">Geographic Accessibility in Healthcare</h1>
+        <p class="lead">Bridging the urban-rural healthcare divide through technology-driven solutions.</p>
+    </header>
+
+    <section class="mb-5">
+        <h2 class="mb-4">Urban-Rural Healthcare Disparities</h2>
+        <p>Physical access to hospitals remains one of the most persistent barriers in India’s healthcare system. This is especially critical in rural areas, where nearly 70% of the population resides but medical infrastructure is limited.</p>
+        <p>Rural communities often face challenges such as:</p>
+        <ul>
+            <li>Long distances to the nearest hospital or diagnostic center</li>
+            <li>Limited transportation options</li>
+            <li>Shortage of healthcare professionals</li>
+            <li>Lower awareness of preventive health measures</li>
+        </ul>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-4">How Our Platform Helps</h2>
+        <p>Our web-based medical platform is designed to bring diagnostic tools and predictive healthcare models to the doorsteps of those living in remote and underserved areas.</p>
+        <p>By using our system, rural patients can:</p>
+        <ul>
+            <li>Receive early predictions for chronic diseases like diabetes and kidney disease</li>
+            <li>Understand their risk levels based on symptoms and health indicators</li>
+            <li>Get recommendations for when to seek in-person medical consultation</li>
+            <li>Access health insights without the burden of travel</li>
+        </ul>
+        <p>This empowers individuals and reduces the strain on urban hospitals by promoting timely diagnosis and decentralizing access to healthcare.</p>
+    </section>
+
+    <figure class="text-center mb-5">
+        <img src="/static/rural_healthcare.jpg" class="img-fluid rounded" width="600" alt="Map showing rural and urban healthcare access across India">
+        <figcaption class="mt-2 text-muted">Visualizing urban-rural disparities in healthcare access</figcaption>
+    </figure>
+
+    <footer class="mt-5 pt-4 border-top">
+        <p class="text-muted">Note: This platform complements but does not replace professional healthcare consultation. Always consult certified medical practitioners for diagnoses and treatments.</p>
+    </footer>
+</div>
+
+<style>
+    .disease-section {
+        background-color: #f8f9fa;
+    }
+    h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+    ul {
+        padding-left: 1.2rem;
+    }
+</style>
+{% endblock %}
